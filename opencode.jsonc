@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permissions": [
+    { "action": "shell", "resource": "*", "effect": "ask" },
+    { "action": "shell", "resource": "uv *", "effect": "allow" },
+    { "action": "shell", "resource": "npm *", "effect": "allow" },
+    { "action": "read", "resource": "*.env", "effect": "deny" }
+  ],
+  "mcp": {
+    "servers": {
+      "playwright": {
+        "type": "local",
+        "command": [
+          "npx",
+          "@playwright/mcp@latest"
+        ],
+	"codemode": false,
+      }
+    }
+  }
+}
